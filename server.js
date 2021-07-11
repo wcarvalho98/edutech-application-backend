@@ -3,13 +3,13 @@ const bodyParser = require('body-parser');
 const cors = require('cors')
 const mongoose = require('mongoose');
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 const uri = "mongodb+srv://admin:admin@cluster0.ewelv.mongodb.net/test?retryWrites=true&w=majority";
 
 const app = express();
 
 // SETANDO VARIÁVEIS DA APLICAÇÃO
-app.set('port', process.env.PORT || port);
+app.set('port', port);
 
 // MIDDLEWARES
 app.use(bodyParser.json());
